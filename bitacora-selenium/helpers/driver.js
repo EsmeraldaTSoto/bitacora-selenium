@@ -1,12 +1,7 @@
 const { Builder, logging } = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
 
-/**
- * Crea y devuelve una instancia del WebDriver de Chrome.
- * Por defecto corre en modo headless (sin ventana visible).
- * Para verlo ejecutarse en pantalla (util para grabar el video demostrativo),
- * correr las pruebas con la variable de entorno HEADLESS=false.
- */
+
 async function buildDriver() {
   const options = new chrome.Options();
 

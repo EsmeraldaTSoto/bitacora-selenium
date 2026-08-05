@@ -1,6 +1,6 @@
 const SESSION_KEY = "bitacora_logged_in";
 
-// Usuario válido "hardcodeado" (no hay backend en este proyecto)
+
 const VALID_USERNAME = "admin";
 const VALID_PASSWORD = "admin123";
 

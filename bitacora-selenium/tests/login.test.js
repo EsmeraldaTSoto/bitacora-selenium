@@ -37,9 +37,7 @@ describe("Historia 1 - Iniciar sesion", function () {
     await pause(driver);
 
     try {
-      // El servidor "serve" reescribe /index.html -> / (Clean URLs), asi que
-      // no verificamos el texto de la URL, sino que aparezca el formulario
-      // de tareas, que solo existe en la vista principal ya autenticada.
+      
       await driver.wait(until.elementLocated(By.id("task-form")), 10000);
     } catch (waitError) {
       const currentUrl = await driver.getCurrentUrl();

@@ -1,7 +1,5 @@
 /**
- * Pausa la ejecucion por SLOWMO milisegundos (definido por variable de entorno).
- * Util para grabar el video demostrativo, donde se necesita que cada paso
- * sea visible en pantalla en vez de ejecutarse en milisegundos.
+ * Pausa la ejecucion por SLOWMO milisegundos 
  * Si SLOWMO no esta definido, no pausa nada (pruebas corren a velocidad normal).
  * @param {import('selenium-webdriver').WebDriver} driver
  */

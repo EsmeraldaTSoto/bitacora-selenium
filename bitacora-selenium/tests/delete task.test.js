@@ -44,9 +44,7 @@ describe("Historia 4 - Eliminar tarea", function () {
     await createTask("Comprar leche");
     await createTask("Llamar al dentista");
 
-    // Ubicamos el boton "Eliminar" que pertenece especificamente al <li> que
-    // contiene el titulo "Llamar al dentista", en vez de asumir su posicion
-    // en la lista (evita ambiguedad si el orden de renderizado cambia).
+    
     const deleteBtnForDentista = await driver.findElement(
       By.xpath('//li[contains(., "Llamar al dentista")]//button[@data-testid="task-delete"]')
     );

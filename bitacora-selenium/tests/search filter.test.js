@@ -88,9 +88,7 @@ describe("Historia 5 - Buscar y filtrar tareas", function () {
     await pause(driver);
     const listText = await taskList.getText();
 
-    // "Comprar leche" y "Llamar al dentista" contienen la letra "a", asi que
-    // ambas deberian seguir apareciendo sin que la busqueda de un solo
-    // caracter genere errores ni resultados vacios de mas.
+    
     assert.ok(listText.includes("Comprar leche"), "Deberia incluir tareas que contienen la letra buscada");
     assert.ok(listText.includes("Llamar al dentista"), "Deberia incluir tareas que contienen la letra buscada");
 
