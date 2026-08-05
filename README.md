@@ -84,4 +84,4 @@ bitacora-selenium/
 │   ├── package-lock.json
 │   └── package.json
 │
-└── .gitignore
+└── .gitignore 
