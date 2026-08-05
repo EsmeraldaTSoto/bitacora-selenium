@@ -48,8 +48,6 @@ El proyecto también está preparado para ser utilizado como base para la realiz
 * **Selenium** – automatización y pruebas de la aplicación web.
 * **Git y GitHub** – control de versiones y almacenamiento del proyecto.
 
-## 📁 Estructura del proyecto
-
 ## 📂 Estructura del proyecto
 
 ```text
