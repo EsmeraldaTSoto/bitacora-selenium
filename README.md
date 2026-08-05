@@ -50,6 +50,9 @@ El proyecto también está preparado para ser utilizado como base para la realiz
 
 ## 📁 Estructura del proyecto
 
+## 📂 Estructura del proyecto
+
+```text
 bitacora-selenium/
 │
 ├── TaskManager/
@@ -60,7 +63,6 @@ bitacora-selenium/
 │   └── style.css
 │
 ├── bitacora-selenium/
-│   │
 │   ├── helpers/
 │   │   ├── driver.js
 │   │   ├── layout.js
@@ -84,4 +86,5 @@ bitacora-selenium/
 │   ├── package-lock.json
 │   └── package.json
 │
-└── .gitignore 
+└── .gitignore
+```
