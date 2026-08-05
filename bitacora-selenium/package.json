@@ -1,0 +1,17 @@
+{
+  "name": "bitacora-selenium-tests",
+  "version": "1.0.0",
+  "description": "Pruebas automatizadas con Selenium WebDriver para la aplicacion Bitacora (Tarea 4)",
+  "scripts": {
+    "serve": "serve -l 8080 ../TaskManager",
+    "test": "mocha tests/**/*.test.js --timeout 60000 --reporter mochawesome --reporter-options reportDir=reports,reportFilename=reporte,html=true,json=false"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.23.0"
+  },
+  "devDependencies": {
+    "mocha": "^10.7.0",
+    "mochawesome": "^7.1.3",
+    "serve": "^14.2.3"
+  }
+}

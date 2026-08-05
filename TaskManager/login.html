@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Iniciar sesión — Bitácora</title>
+<meta name="description" content="Bitácora: inicia sesión para acceder a tu cuaderno de tareas." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="page page--login">
+
+  <header class="masthead">
+    <div class="masthead__mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="34" height="34">
+        <rect x="2" y="2" width="36" height="36" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M11 20.5L17 26.5L29 13.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <h1>Bitácora</h1>
+      <p class="masthead__subtitle">Inicia sesión para continuar</p>
+    </div>
+  </header>
+
+  <form id="login-form" class="entry" novalidate>
+    <div class="entry__fields entry__fields--stacked">
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Usuario"
+        autocomplete="username"
+        data-testid="login-username"
+      />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Contraseña"
+        autocomplete="current-password"
+        data-testid="login-password"
+      />
+    </div>
+
+    <p id="login-error" class="error-msg hidden" role="alert" data-testid="login-error"></p>
+
+    <div class="entry__actions">
+      <button type="submit" id="login-btn" data-testid="login-submit">Entrar</button>
+    </div>
+  </form>
+
+  
+
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>

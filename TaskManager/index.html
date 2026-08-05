@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gestor de tareas</title>
+<meta name="description" content="Bitácora: gestor de tareas simple con búsqueda, filtros y progreso." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<script>
+  // Guardia de sesión: si no hay sesión iniciada, redirige a login antes de pintar la página.
+  if (localStorage.getItem("bitacora_logged_in") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead__mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="34" height="34">
+        <rect x="2" y="2" width="36" height="36" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M11 20.5L17 26.5L29 13.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <h1>Bitácora</h1>
+      <p class="masthead__subtitle">Cuaderno de tareas pendientes</p>
+    </div>
+    <button type="button" id="logout-btn" class="ghost logout-btn" data-testid="logout-button">Cerrar sesión</button>
+  </header>
+
+  <section class="stats" id="stats">
+    <div class="stats__row">
+      <span id="stats-label">0 de 0 tareas completadas</span>
+      <span id="stats-percent">0%</span>
+    </div>
+    <div class="progress">
+      <div class="progress__fill" id="progress-fill"></div>
+    </div>
+  </section>
+
+  <form id="task-form" class="entry" novalidate>
+    <div class="entry__fields">
+      <input type="text" id="title" placeholder="¿Qué hay que hacer?" autocomplete="off" data-testid="task-title" />
+      <input type="text" id="description" placeholder="Detalle (opcional)" autocomplete="off" data-testid="task-description" />
+    </div>
+    <div class="entry__actions">
+      <button type="submit" id="submit-btn" data-testid="task-submit">Anotar tarea</button>
+      <button type="button" id="cancel-edit-btn" class="ghost hidden" data-testid="task-cancel-edit">Cancelar</button>
+    </div>
+  </form>
+
+  <p id="error-msg" class="error-msg hidden" role="alert" data-testid="task-error"></p>
+
+  <div class="toolbar">
+    <input type="search" id="search" placeholder="Buscar en la bitácora…" autocomplete="off" data-testid="task-search" />
+    <span id="results-count" class="results-count"></span>
+    <div class="filters" role="tablist">
+      <button type="button" class="filter-btn active" data-filter="all">Todas</button>
+      <button type="button" class="filter-btn" data-filter="pending">Pendientes</button>
+      <button type="button" class="filter-btn" data-filter="done">Completadas</button>
+    </div>
+  </div>
+
+  <ol id="task-list" class="entries" data-testid="task-list"></ol>
+
+  <div id="empty-state" class="empty-state hidden">
+    <svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true">
+      <path d="M14 10h28l8 8v36a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V12a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M42 10v8h8" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M22 30h20M22 38h20M22 46h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <p id="empty-state-text">La bitácora está en blanco. Anota tu primera tarea arriba.</p>
+  </div>
+
+</div>
+
+<script src="auth.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
